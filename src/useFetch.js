@@ -9,11 +9,10 @@ export const useFetch = () => {
 
 	const getData = async () => {
 		const response = await fetch(URL);
-		const data = await response.json();
-		paginate(data);
-		setData(data);
-		setLoading(false);
-     
+    const data = await response.json();
+    
+		setData(paginate(data));
+		setLoading(false);    
 	};
 
 	useEffect(() => {
