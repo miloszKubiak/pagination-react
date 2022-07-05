@@ -10,8 +10,10 @@ export const useFetch = () => {
 	const getData = async () => {
 		const response = await fetch(URL);
 		const data = await response.json();
+		paginate(data);
 		setData(data);
 		setLoading(false);
+     
 	};
 
 	useEffect(() => {
@@ -19,4 +21,3 @@ export const useFetch = () => {
 	}, []);
 	return { loading, data };
 };
-
